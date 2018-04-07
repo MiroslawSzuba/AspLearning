@@ -34,6 +34,14 @@ namespace WebApplication1
                 app.UseDeveloperExceptionPage();
             }
 
+            // These two lines allow to load index.html file which is located in wwwroot branch.
+            // We can reach this file putting the name of the file after localhost in the address (e.g. http://localhost:58588/index.html).
+            // Configure a rewrite rule to auto-lookup for standard default files such as index.html.
+            app.UseDefaultFiles();
+            // Serve static files (html, css, js, images & more). See also the following URL:
+            // https://docs.asp.net/en/latest/fundamentals/static-files.html for further reference.
+            app.UseStaticFiles();
+
             app.UseMvc();
         }
     }
